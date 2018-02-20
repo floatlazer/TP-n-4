@@ -20,7 +20,7 @@ OBJS = \
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
 	@echo "\033[33m Compiling " $@ "\033[0m"
-	@$(CXX) $(CXXOPT) -I$(PROJECT_ROOT)/libgui/include -I$(INCL_DIR) -I$(OPENGLINC) -c $< -o $@
+	@$(CXX) $(CXXOPT) -I$(PROJECT_ROOT)/include -I$(PROJECT_ROOT)/libgui/include -I$(INCL_DIR) -I$(OPENGLINC) -c $< -o $@
 
 all: $(PROJECT_ROOT)/include $(LIB_DIR)/libgui.so test
 
@@ -32,7 +32,7 @@ $(PROJECT_ROOT)/include:
 $(LIB_DIR)/libgui.so: $(OBJS)
 	@mkdir -p $(LIB_DIR)
 	@echo "\033[35m Linking " $@ "\033[0m"
-	@$(CXX) -shared $(CXXOPT) -L$(OPENGLLIBROOT) -o $@ $(OBJS) -lglut -lGLU -lGL 
+	@$(CXX) -shared $(CXXOPT) -L$(PROJECT_ROOT)/lib -L$(OPENGLLIBROOT) -o $@ $(OBJS) -lglut -lGLU -lGL 
 
 test: $(TST_DIR)/test_rendering.exe
 

@@ -9,7 +9,7 @@ OPTIMOPT = -O2 -march=native -fopenmp
 CXXOPT = -std=c++11 -fPIC $(DEBUGOPT)
 
 MPIROOT    = /usr/lib/openmpi
-
+PROJECT_ROOT =  /auto/x/xuazhang/2A/IN203/TP-n-4
 OPENGLINC      = /usr/include
 OPENGLLIBROOT  = /usr/lib/x86_64-linux-gnu/
 
