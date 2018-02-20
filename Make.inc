@@ -1,12 +1,12 @@
 # Makefile principal
 # VARIABLES POUVANT ETRE REDEFINIS PAR L'UTILISATEUR
 # DIRECTORY OU EST INSTALLE HPNUM :
-PROJECT_ROOT = /tmp_user/ldmfn423z/juvigny/Cours.d/Ensta/2018/TP4
+PROJECT_ROOT = /auto/n/nalpas/.local/share/Trash/files/TP-n-4-master
 CXX = g++
 DEBUGOPT = -g -Wall -pedantic -fopenmp -D_GLIBCXX_DEBUG_PEDANTIC
 OPTIMOPT = -O2 -march=native -fopenmp
 
-CXXOPT = -std=c++14 -fPIC $(DEBUGOPT)
+CXXOPT = -std=c++11 -fPIC $(DEBUGOPT)
 
 MPIROOT    = /usr/lib/openmpi
 
@@ -17,6 +17,6 @@ DOXYGENEXE = /usr/bin/doxygen
 # FIN DES VARIABLES POUVANT ETRE REDEFINIES PAR L'UTLISATEUR
 
 INCPATH= -I$(MPIROOT)/include                \
-	     -I$(HPNUM_ROOT)/include
+	     -I$(PROJECT_ROOT)/include
 
-LIBPATH= -L$(OPENGLLIBROOT) -L$(HPNUM_ROOT)/lib 
+LIBPATH= -L$(OPENGLLIBROOT) -L$(PROJECT_ROOT)/lib 
